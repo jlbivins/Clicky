@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Pokey1",
+        "image":"/images/pokeymon1.png",
+        "clicked": false
+    },
+    {
+        "id": 2,
+        "name": "Pokey2",
+        "image":"/images/pokeymon2.png",
+        "clicked": false
+    },
+    {
+        "id": 3,
+        "name": "Pokey3",
+        "image": "/images/pokeymon3.png",
+        "clicked": false
+    },
+    {
+        "id": 4, 
+        "name": "Pokey4",
+        "image": "/images/pokeymon4.png",
+        "clicked": false
+    },
+    {
+        "id": 5, 
+        "name": "Pokey5",
+        "image": "/images/pokeymon5.png",
+        "clicked": false
+    },
+    {
+        "id": 6,
+        "name": "Pokey6",
+        "image": "/images/pokeymon6.png",
+        "clicked": false
+    },
+    {
+        "id": 7,
+        "name": "Pokey7",
+        "image": "/images/pokeymon7.png",
+        "clicked": false
+    },
+    {
+        "id": 8,
+        "name": "Pokey8",
+        "image": "/images/pokeymon8.png",
+        "clicked": false
+    }
+]

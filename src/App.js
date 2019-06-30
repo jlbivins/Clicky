@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import NavBar from "./components/nav/nav.js"; 
 import Button from "./components/button/button.js";       
-
+import Pokemon from "./cards.json";
+import "./style.css";
 
 class App extends Component {
     //This initiallizes any state data
@@ -10,7 +11,8 @@ class App extends Component {
       super(props);
       this.state = {
         score:0,
-        dataArray: [1,2,3,4]
+       clicked:false,
+       Pokemon
     }
 }
 
@@ -28,19 +30,22 @@ class App extends Component {
     buttonClick = (buttonid)=>{
       console.log("button Clicked");
      console.log("buttonid", buttonid);
-
+     if(!this.state.clicked){
      // based of id check clicked ... 
   
       //Example of using an array in state.
       // Since we cannot mutate state directly we must first make a 'deep' copy of the array.
       // We then mutate the copy, then setState using the copy.
-      let newData = [...this.state.dataArray];  // deep copy of dataArray using Spread Operator
+        let newData = [...this.state.Pokemon];  // deep copy of dataArray using Spread Operator
       //newData[buttonid].clicked = true;
-      newData.sort(()=>Math.random()-.5);
-      
+         newData.sort(()=>Math.random()-.5);
+     
       // Here we update the score and dataArray in our state.
-      this.setState({score: this.state.score + 1, dataArray: newData});
-
+        this.setState({score: this.state.score + 1, Pokemon: newData});
+     }
+     else{
+       this.setState({clicked:true},buttonid);
+     }
      };
 
 
@@ -55,14 +60,14 @@ class App extends Component {
       <div className="App">
         <NavBar score={this.state.score} />
 
-        <p className="App-intro">
+        {/* <p className="App-intro">
          This paragraph is not a component. Its just JSX code.
-        </p>
+        </p> */}
 
         {/* Just displaying our dataArray in state to show its updating*/}
-        <p>dataArray in state: {this.state.dataArray.join(",")}</p>
+        {/* <p>dataArray in state: {this.state.Pokemon.join(",")}</p> */}
 
-        {this.state.dataArray.map((e,i)=> <Button click={this.buttonClick} buttonName={e} key={i} id={i}/>)}
+        {this.state.Pokemon.map((e,i)=> <Button click={this.buttonClick} buttonName={e} key={i} id={i} image={e.image}/>)}
         <h2>Score: {this.state.score}</h2>
       </div>
 
