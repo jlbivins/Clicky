@@ -11,7 +11,7 @@ import "./button.css";
 const Button = props => (
  
 // <img className="card-img-top card-height" src={props.image} alt="" />
-    <img className="card" src={props.image} alt="" onClick={()=>props.click(props.id)} />
+    <img className="card" src={props.image} alt="" onClick={()=>props.click(props.id, props.pokemon)} />
 );
 // const Button = props => (
 //   <div className="card" onClick={e => props.clickEvent(e.target.src)}>
